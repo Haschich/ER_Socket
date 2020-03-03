@@ -3,12 +3,12 @@ var app = new express();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
  
-var port = 7777;
+var port = process.env.PORT || 7777;
  
 app.use(express.static(__dirname + "/public" ));
  
 app.get('/',function(req,res){
-res.redirect('index.html');
+res.redirect('public/index.html');
 });
  
  
