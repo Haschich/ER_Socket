@@ -2,5 +2,5 @@
     "name": "Start on Heroku: Node.js",
     "description": "Remote Specialist using Socket.io",
     "repository": "https://github.com/Haschich/ER_Socket",
-    "keywords": ["node", "express", "socket.io"],
+    "keywords": ["node", "express", "socket.io"]
 }
