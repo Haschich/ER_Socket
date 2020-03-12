@@ -1,9 +1,10 @@
 var express = require("express");
 var app = new express();
-var http = require("http").Server(app);
+var ip = process.env.OPENSHIFT_NODEJS_IP || "http";
+var http = require(ip).Server(app);
 var io = require("socket.io")(http);
  
-var port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 7777;
+var port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 5858;
  
 app.use(express.static(__dirname + "/public" ));
  
