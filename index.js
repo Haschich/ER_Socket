@@ -3,7 +3,7 @@ var app = new express();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
  
-var port = process.env.PORT || 7777;
+var port = OPENSHIFT_NODEJS_PORT || process.env.PORT || 7777;
  
 app.use(express.static(__dirname + "/public" ));
  
