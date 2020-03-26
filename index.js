@@ -1,9 +1,6 @@
 var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 
-var redis = require('socket.io-redis');
-io.adapter(redis({ host: '54.91.209.35', port: 6379 }));
-
 var fs = require('fs');
 
 var port = process.env.PORT || 7777;
