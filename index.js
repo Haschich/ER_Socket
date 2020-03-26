@@ -21,10 +21,10 @@ io.on('connection',function(socket){
  
 });
  
-// http.listen(port,function(){
-// console.log("Server running at port "+ port);
-// });
-//
+http.listen(port,function(){
+console.log("Server running at port "+ port);
+});
+
 // var express = require("express");
 // var app = new express();
 // var ip = "http";
