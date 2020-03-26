@@ -4,7 +4,7 @@ var ip = "http";
 var http = require(ip).Server(app);
 var io = require("socket.io")(http);
  
-var port = process.env.PORT || 443;
+var port = process.env.PORT || 80;
  
 app.use(express.static(__dirname + "/public" ));
  
