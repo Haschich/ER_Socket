@@ -9,13 +9,12 @@ var port = process.env.PORT || 80;
 app.use(express.static(__dirname + "/public" ));
 
 app.get('/',function(req,res){
-res.redirect('public/index.html');
+    res.redirect('public/index.html');
 });
 
 io.on('connection',function(socket){
-
     socket.on('stream',function(image){
-        socket.broadcast.emit('stream',image);  
+        socket.emit('stream',image);  
     });
 
 });
