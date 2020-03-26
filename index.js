@@ -6,6 +6,10 @@ var io = require("socket.io")(http);
 
 var port = process.env.PORT || 80;
 
+http.listen(port,function(){
+    console.log("Server running at port "+ port);
+});
+
 app.use(express.static(__dirname + "/public" ));
 
 app.get('/',function(req,res){
@@ -19,6 +23,4 @@ io.on('connection',function(socket){
 
 });
 
-http.listen(port,function(){
-console.log("Server running at port "+ port);
-});
+
