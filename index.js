@@ -1,5 +1,9 @@
 var app = require('http').createServer(handler)
-var io = require('socket.io')(app);
+var io = require('socket.io')(app, {
+    // WARNING: in that case, there is no fallback to long-polling
+    transports: [ 'websocket' ] // or [ 'websocket', 'polling' ], which is the same thing
+});
+
 var fs = require('fs');
 
 var port = process.env.PORT || 80;
