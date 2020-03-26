@@ -21,7 +21,7 @@ width: 1280px; height: 720px;
 transform: scaleY(-1);" id="play">
 <div id="logger"></div>
 <script type="text/javascript">
-    var socket = io('http://54.91.209.35/');
+    var socket = io('http://54.91.209.35');
     socket.on('stream',function(image){
         var view  = new Uint8Array(image);
         var b64encoded = btoa(String.fromCharCode.apply(null, view));
