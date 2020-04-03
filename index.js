@@ -13,9 +13,6 @@ const path       = require('path');
 const port       = process.env.PORT || 80;
 const app        = express();
 
-/**
- * WebSocket Configuration
- */
 const io = require('socket.io')(port, {
     handlePreflightRequest: (req, res) => {
         const headers = {
