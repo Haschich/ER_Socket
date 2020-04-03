@@ -13,6 +13,10 @@ const path       = require('path');
 const port       = process.env.PORT || 3000;
 const app        = express();
 
+var ip = "http";
+var http = require(ip).Server(app);
+app.use(express.static(__dirname));
+
 const io = require('socket.io')(port, {
     handlePreflightRequest: (req, res) => {
         const headers = {
@@ -36,9 +40,8 @@ const io = require('socket.io')(port, {
     cookieHttpOnly:true
 });
 
-
 app.get('/',function(req,res){
-res.redirect('index.html');
+    res.redirect('index.html');
 });
  
 io.on('connection',function(socket){
