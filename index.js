@@ -47,7 +47,7 @@ io.on('connection',function(socket){
     });
 });
 
-app.listen(port,function(){
+app.listen(80,function(){
 console.log("Server running at port "+ port);
 });
 
