@@ -15,6 +15,9 @@ const app        = express();
 
 var ip = "http";
 var http = require(ip).Server(app);
+
+var frame = 0;
+
 app.use(express.static(__dirname));
 
 const io = require('socket.io')(port, {
@@ -46,7 +49,9 @@ app.get('/',function(req,res){
  
 io.on('connection',function(socket){
     socket.on('stream',function(image){
-        socket.broadcast.emit('stream',image);  
+        socket.broadcast.emit('stream',image);
+        console.log("Recieved frame: "+ frame);
+        frame += 1;
     });
 });
 
