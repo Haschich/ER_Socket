@@ -51,7 +51,9 @@ io.on('connection',function(socket){
     });
 });
 
-app.listen(port, () => console.log("Server running at port "+ port););
+app.listen(port,function(){
+console.log("Server running at port "+ port);
+});
 
 // http.listen(port,function(){
 // console.log("Server running at port "+ port);
