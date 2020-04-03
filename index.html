@@ -22,7 +22,7 @@ transform: scaleY(-1);" id="play">
 <div id="logger"></div>
 <script type="text/javascript">
     var frame = 0;
-    var socket = io('ws://18.208.166.205');
+    var socket = io('ws://54.175.86.33/');
     //var socket = io('ws://18.208.166.205');
     socket.on('stream',function(image){
         var view  = new Uint8Array(image);
