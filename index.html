@@ -21,13 +21,16 @@ width: 1280px; height: 720px;
 transform: scaleY(-1);" id="play">
 <div id="logger"></div>
 <script type="text/javascript">
-    var socket = io('ws://18.208.166.205',{transports: ['websocket']});
+    var frame = 0;
+    var socket = io('http://18.208.166.205',{transports: ['websocket']});
     //var socket = io('ws://18.208.166.205');
     socket.on('stream',function(image){
         var view  = new Uint8Array(image);
         var b64encoded = btoa(String.fromCharCode.apply(null, view));
         $('#play').attr('src',"data:image/jpg;base64," + b64encoded);
         //$('#logger').text(image);
+        console.log("Received frame: "+ frame);
+        frame += 1;
     });
 </script>
 </body>

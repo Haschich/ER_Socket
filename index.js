@@ -50,7 +50,7 @@ app.get('/',function(req,res){
 io.on('connection',function(socket){
     socket.on('stream',function(image){
         socket.broadcast.emit('stream',image);
-        console.log("Recieved frame: "+ frame);
+        console.log("Received frame: "+ frame);
         frame += 1;
     });
 });
