@@ -22,7 +22,7 @@ transform: scaleY(-1);" id="play">
 <div id="logger"></div>
 <script type="text/javascript">
     var frame = 0;
-    var socket = io();
+    var socket = io('http://especialistaremoto-env-1.eba-9aurmpp3.us-east-1.elasticbeanstalk.com');
     socket.on('stream',function(image){
         var view  = new Uint8Array(image);
         var b64encoded = btoa(String.fromCharCode.apply(null, view));
