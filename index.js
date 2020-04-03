@@ -53,6 +53,10 @@ io.on('connection',function(socket){
         console.log("Received frame: "+ frame);
         frame += 1;
     });
+
+    socket.on('frame',function(id){
+        console.log("Client sent frame: "+ id);
+    });
 });
 
 // app.listen(80,function(){
